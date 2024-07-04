@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EmployeeData.Pages.SessionPage"
+             xmlns:lv="clr-namespace:EmployeeData.Model.ViewModel"
+             xmlns:local="clr-namespace:EmployeeData.Pages"
+             x:DataType="lv:LoginViewModel"
+             Title="SessionPage">
+    <ScrollView>
+        <FlexLayout Direction="Column" JustifyContent="Center" AlignItems="Center" Padding="20" BackgroundColor="#f0f0f0">
+            <Frame Margin="10" Padding="20" CornerRadius="10" BackgroundColor="White" HasShadow="True" WidthRequest="300">
+                <StackLayout Spacing="10">
+                    <Label FontSize="20" Text="Session Id:" TextColor="#333333" />
+                    <Entry Placeholder="Enter Session Id" Text="{Binding SessionId}" />
+                    <Label FontSize="20" Text="User Id:" TextColor="#333333" />
+                    <Entry Placeholder="Enter User Id" Text="{Binding IdUser}" />
+                    <Button Text="GetTaskType" Command="{Binding MoveUserCommand}" BackgroundColor="#007BFF" TextColor="White" CornerRadius="20" />
+                </StackLayout>
+            </Frame>
+        </FlexLayout>
+    </ScrollView>
+</ContentPage>

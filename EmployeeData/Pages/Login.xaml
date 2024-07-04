@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EmployeeData.Pages.Login"
+             xmlns:lv="clr-namespace:EmployeeData.Model.ViewModel"
+             x:DataType="lv:LoginViewModel"
+             Title="Login">
+    <ScrollView>
+        <FlexLayout Direction="Column" JustifyContent="Center" AlignItems="Center" Padding="20" BackgroundColor="#f0f0f0">
+            <Frame Margin="10" Padding="20" CornerRadius="10" BackgroundColor="White" HasShadow="True" WidthRequest="300">
+                <StackLayout Spacing="15">
+                    <Entry Placeholder="Enter Username" Text="{Binding UserName}" FontSize="16" />
+                    <Entry Placeholder="Enter Password" Text="{Binding Password}" IsPassword="True" FontSize="16" />
+                    <Button Text="Login" Command="{Binding LoginUserCommand}"  BackgroundColor="#007BFF" TextColor="White" CornerRadius="20" />
+                </StackLayout>
+            </Frame>
+        </FlexLayout>
+    </ScrollView>
+</ContentPage>

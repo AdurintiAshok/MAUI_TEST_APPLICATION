@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:EmployeeData.Pages"
+             x:Class="EmployeeData.Pages.TaskInfo"
+             Title="User Details">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="10">
+                <ListView x:Name="tasksListView"
+                          ItemsSource="{Binding Tasks}"
+                          HasUnevenRows="True"
+                          SeparatorVisibility="Default">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame Padding="10" Margin="5" BackgroundColor="#FFFFFF" CornerRadius="5" HasShadow="True">
+                                    <StackLayout Spacing="5">
+                                        <Label Text="Task ID:" FontSize="Medium" FontAttributes="Bold" TextColor="#007BFF"/>
+                                        <Label Text="{Binding IdTask}" FontSize="Medium" TextColor="#333333"/>
+
+                                        <Label Text="Customer Name:" FontSize="Medium" FontAttributes="Bold" TextColor="#007BFF"/>
+                                        <Label Text="{Binding Locationn.CustomerName}" FontSize="Medium" TextColor="#333333"/>
+
+                                        <Label Text="Account Number:" FontSize="Medium" FontAttributes="Bold" TextColor="#007BFF"/>
+                                        <Label Text="{Binding Locationn.AccountNumber}" FontSize="Medium" TextColor="#333333"/>
+
+                                        <Label Text="Phone Number:" FontSize="Medium" FontAttributes="Bold" TextColor="#007BFF"/>
+                                        <Label Text="{Binding Locationn.PhoneNumber}" FontSize="Medium" TextColor="#333333"/>
+                                    </StackLayout>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

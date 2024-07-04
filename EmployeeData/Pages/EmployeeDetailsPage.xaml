@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EmployeeData.Pages.EmployeeDetailsPage"
+             xmlns:controls="clr-namespace:EmployeeData.Model.ViewModel"
+             x:DataType="controls:EmployeeViewModels"
+             Title="{Binding Employee.EmployeeName}">
+    <TableView Intent="Data">
+        <TableRoot >
+            <TableSection >
+                <TextCell Text="ID" Detail="{Binding Employee.UUID}" />
+                <TextCell Text="Name" Detail="{Binding Employee.EmployeeName}" />
+                <TextCell Text="Email" Detail="{Binding Employee.EmployeeEmail}" />
+                <TextCell Text="Phone" Detail="{Binding Employee.EmployeePhone}" />
+                <SwitchCell Text="Active" On="{Binding Employee.isActive}" />
+            </TableSection>
+        </TableRoot>
+    </TableView>
+</ContentPage>

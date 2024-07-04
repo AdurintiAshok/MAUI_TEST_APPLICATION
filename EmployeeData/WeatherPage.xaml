@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EmployeeData.WeatherPage"
+             xmlns:vm="clr-namespace:EmployeeData.Model.ViewModel"
+             x:DataType="vm:WeatherPageViewModel"
+             Title="Weather Information"
+             BackgroundColor="#606cf2">
+    <VerticalStackLayout>
+        <Frame Margin="20">
+            <Grid ColumnSpacing="5">
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Entry Placeholder="lat" Grid.Column="0" Text="{Binding Lat}"/>
+                <Entry Placeholder="longt" Grid.Column="1" Text="{Binding Lng}"/>
+                <Button Text="Fetch" Grid.Column="2" Command="{Binding RefreshCommand}"/>
+            </Grid>
+        </Frame>
+        <Image HeightRequest="100" WidthRequest="100"/>
+        <Label HorizontalOptions="Center" FontSize="60" Text="{Binding Temp}" TextColor="White" FontAttributes="Bold"/>
+        <Label HorizontalOptions="Center" FontSize="25" Text="{Binding Condition}" TextColor="White" FontAttributes="Bold"/>
+        <Label HorizontalOptions="Center" FontSize="15" Text="{Binding Location}" TextColor="White" FontAttributes="Bold"/>
+        <Grid ColumnSpacing="5" Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Frame Margin="5"  Grid.Column="0">
+                <VerticalStackLayout> 
+                    <Label Text="{Binding Humidity}" TextColor="Black" FontSize="15" HorizontalTextAlignment="Center" />
+                    <Label Text="Humidity" TextColor="Black" FontSize="15" HorizontalTextAlignment="Center"/>
+                </VerticalStackLayout>
+            </Frame>
+            <Frame Margin="5"  Grid.Column="1">
+                <VerticalStackLayout>
+                    <Label Text="{Binding Cloud}" TextColor="Black" FontSize="15" HorizontalTextAlignment="Center" />
+                    <Label Text="Cloud" TextColor="Black" FontSize="15" HorizontalTextAlignment="Center"/>
+                </VerticalStackLayout>
+            </Frame>
+            <Frame Margin="5"  Grid.Column="2">
+                <VerticalStackLayout>
+                    <Label Text="{Binding IsDay}"  TextColor="Black" FontSize="15" HorizontalTextAlignment="Center" />
+                    <Label Text="Is Day" TextColor="Black" FontSize="15" HorizontalTextAlignment="Center"/>
+                </VerticalStackLayout>
+            </Frame>
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>
